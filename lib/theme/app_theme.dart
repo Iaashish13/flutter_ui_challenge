@@ -19,5 +19,7 @@ final appTheme = ThemeData(
       fontStyle: FontStyle.italic,
       fontWeight: FontWeight.w700,
     ),
+    bodyText2: TextStyle(
+        fontSize: 20.sp, color: Colors.black, fontWeight: FontWeight.w500),
   ),
 );

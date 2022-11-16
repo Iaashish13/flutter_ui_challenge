@@ -9,12 +9,14 @@ import 'package:flutter_ui_challenge/ui_challenge/screen/home_page.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  // for statusbar configuration in android and ios
+  // We assume we are building for android and ios phones.
   if (Platform.isAndroid) {
     SystemChrome.setSystemUIOverlayStyle(
-      const SystemUiOverlayStyle(
-          statusBarColor: Colors.transparent,
-          statusBarBrightness: Brightness.dark),
+      const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
     );
+  } else {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
   }
 
   runApp(const MyApp());
